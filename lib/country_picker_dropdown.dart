@@ -100,7 +100,7 @@ class CountryPickerDropdown extends StatefulWidget {
 
 class _CountryPickerDropdownState extends State<CountryPickerDropdown> {
   late List<Country> _countries;
-  late Country _selectedCountry;
+  late Country? _selectedCountry;
 
   @override
   void initState() {
@@ -130,6 +130,8 @@ class _CountryPickerDropdownState extends State<CountryPickerDropdown> {
       if (widget.isFirstDefaultIfInitialValueNotProvided &&
           _countries.length > 0) {
         _selectedCountry = _countries[0];
+      } else {
+        _selectedCountry = null;
       }
     }
 
